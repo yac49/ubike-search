@@ -10,3 +10,17 @@
 因此想設計對使用者較為友善的介面，延伸出增加臺北市、新北市UBike資料API，可查詢各個站點剩餘車數以及連結Google Map查詢站點位置，並以視窗呈現內容。
 
 ### 設計目的
+1. 改善使用者使用經驗
+1. 設計友善使用者的介面
+1. 圖像化站點車輛資訊
+1. 簡化使用者操作
+
+## 專題介紹
+### Requirement
+```python
+import random
+import tkinter
+from tkinter import *
+import requests
+import webbrowser
+```
