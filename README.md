@@ -24,3 +24,9 @@ from tkinter import *
 import requests
 import webbrowser
 ```
+### 素材
+##### 資料API來源
+[YouBike2.0臺北市公共自行車即時資訊](https://data.gov.tw/dataset/137993)  
+[新北市公共自行車租賃系統(YouBike)](https://data.ntpc.gov.tw/datasets/71CD1490-A2DF-4198-BEF1-318479775E8A)  
+[YouBike臺北市公共自行車即時資訊](https://data.gov.tw/dataset/128706)  
+[桃園公共自行車即時服務資料](https://data.tycg.gov.tw/opendata/datalist/datasetMeta?oid=5ca2bfc7-9ace-4719-88ae-4034b9a5a55c)
