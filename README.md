@@ -28,7 +28,10 @@
 1. 選擇查詢的地區
 2. 選擇查詢的地點  
 系統即會輸出總車位、剩餘車數、站點地區、站點代號、站點地址及上傳資料時間
-3. 點擊查看地圖，至Google Map查看站點位置  
+3. 點擊查看地圖，至Google Map查看站點位置
+4. 可點擊更新，更新數據
+   
+右側腳踏車圖案將會依剩餘車數比例改變顏色，剩餘多為綠色，依數量減少為黃、紅色。
 
 ### 應用技術
 * requests：下載網頁api資料
@@ -60,7 +63,7 @@ import webbrowser
 def dateTrans(date):
     return date[0:4] + '-' + date[4:6] + '-' + date[6:8] + ' ' + date[8:10] + ':' + date[10:12] + ':' + date[12:14]
 ```
-#### 抓取資料並儲存於陣列
+#### 抓取資料並儲存於List
 ```py
 def getTP2():
     r = requests.get(url[1])
@@ -81,4 +84,80 @@ def getTP2():
         data.append(temp)
     opt2["values"] = sna
 ```
-
+#### 選擇大地區後更新地點List,設定輸出初始值
+```py
+def opt1_select(event):
+    global map_url
+    global rate
+    index = opt1.current()
+    data.clear()
+    if (index == 1):
+        getTP2()
+    elif (index ==2):
+        getTP()
+    elif (index ==3):
+        getNTP()
+    elif (index ==4):
+        getTao()
+    opt2.current(0)
+    code_t.configure(text=data[0][0])
+    bike.configure(text=data[0][2])
+    emp.configure(text=data[0][3])
+    loc_t.configure(text=data[0][4])
+    time_t.configure(text=data[0][5])
+    addr_t.configure(text=data[0][8])
+    rate = int(data[0][3])/int(data[0][2])
+    chg()
+    map_url = 'https://www.google.com.tw/maps/search/'+str(data[0][6])+','+str(data[0][7])
+```
+#### 選擇地點後，將資料存於資料List
+```py
+def opt2_select(event):
+    global map_url
+    global rate
+    index = opt2.current()
+    code_t.configure(text=data[index][0])
+    bike.configure(text=data[index][2])
+    emp.configure(text=data[index][3])
+    loc_t.configure(text=data[index][4])
+    time_t.configure(text=data[index][5])
+    map_url = 'https://www.google.com.tw/maps/search/'+str(data[index][6])+','+str(data[index][7])
+    addr_t.configure(text=data[index][8])
+    rate = int(data[index][3])/int(data[index][2])
+    chg()
+```
+連結def與選單
+```py
+opt2.bind('<<ComboboxSelected>>', opt2_select)
+```
+更新按鈕功能，重新抓取API資料
+```py
+def update():
+    global data
+    global map_url
+    data.clear()
+    index1 = opt1.current()
+    if (index1 == 1):
+        getTP2()
+    elif (index1 ==2):
+        getTP()
+    elif (index1 ==3):
+        getNTP()
+    elif (index1 ==4):
+        getTao()
+    index2 = opt2.current()
+    code_t.configure(text=data[index2][0])
+    bike.configure(text=data[index2][2])
+    emp.configure(text=data[index2][3])
+    loc_t.configure(text=data[index2][4])
+    time_t.configure(text=data[index2][5])
+    map_url = 'https://www.google.com.tw/maps/search/'+str(data[index2][6])+','+str(data[index2][7])
+    addr_t.configure(text=data[index2][8])
+```
+#### 開啟Google Map功能
+```py
+def map_clicked():
+    webbrowser.open(map_url)
+map = tk.Button(canvas,text="查看地圖",bg='gray',fg='white',command=map_clicked)
+map.place(x=330,y=230,width=260,height=20)
+```
