@@ -22,6 +22,10 @@
 1. 簡化使用者操作
 
 ## 專題介紹
+
+### 使用說明
+![使用介面](img_readme/main.jpg)
+1. 選擇
 ### Requirement
 
 ```py
@@ -48,6 +52,4 @@ import webbrowser
 [YouBike臺北市公共自行車即時資訊](https://data.gov.tw/dataset/128706)  
 [桃園公共自行車即時服務資料](https://data.tycg.gov.tw/opendata/datalist/datasetMeta?oid=5ca2bfc7-9ace-4719-88ae-4034b9a5a55c)
 
-### 使用說明
-![使用介面](img_readme/main.jpg)
 
