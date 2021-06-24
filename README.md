@@ -2,9 +2,11 @@
 
 ###### 此搜尋系統提供查詢臺北YouBike、Youbike2.0、新北YouBike、桃園YouBike各站點剩餘車數
 
+
 ## 目錄
 [專題說明]()  
 [專題介紹]()
+
 
 ## 專題說明
 
@@ -21,12 +23,16 @@
 
 ## 專題介紹
 ### Requirement
-```python
+
+```py
+import random
+
 import tkinter
 from tkinter import *
 import requests
 import webbrowser
 ```
+
 ### 應用技術
 * requests：下載網頁api資料
 * tkinter：設計GUI
@@ -35,6 +41,8 @@ import webbrowser
 
 ### 素材
 ###### 資料API來源
+
+
 [YouBike2.0臺北市公共自行車即時資訊](https://data.gov.tw/dataset/137993)  
 [新北市公共自行車租賃系統(YouBike)](https://data.ntpc.gov.tw/datasets/71CD1490-A2DF-4198-BEF1-318479775E8A)  
 [YouBike臺北市公共自行車即時資訊](https://data.gov.tw/dataset/128706)  
