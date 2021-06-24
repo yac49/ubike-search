@@ -237,6 +237,7 @@ addr_title.place(x=50,y=210,width=260,height=20)
 addr_t = tk.Label(canvas,text="",bg='gray')
 addr_t.place(x=50,y=230,width=260,height=20)
 
+#更新按鈕功能
 def update():
     global data
     global map_url
