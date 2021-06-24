@@ -35,7 +35,7 @@ pic.place(x=60,y=20,width=100,height=40)
 ti = tk.Label(canvas,text="YouBike 查詢系統",bg='white', font=('Arial', 24))
 ti.place(x=160,y=20,width=320,height=40)
 
-l0c = tk.Label(canvas,text = "要查尋的地區",bg="white",anchor=tk.W)
+l0c = tk.Label(canvas,text = "要查詢的地區",bg="white",anchor=tk.W)
 l0c.place(x=50,y=70,width=200,height=20)
 
 opt1 = ttk.Combobox(window, values=[
