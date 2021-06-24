@@ -7,7 +7,9 @@ import tkinter.ttk as ttk
 import requests
 import webbrowser
 
+#資料List
 data=[]
+#剩餘車位比例
 rate = 0
 
 url = ['', #NONE
@@ -179,10 +181,7 @@ def opt2_select(event):
     addr_t.configure(text=data[index][8])
     rate = int(data[index][3])/int(data[index][2])
     chg()
-    print(rate)
     
-    #print(data[index][6])
-    #print(data[index][7])
 opt2.bind('<<ComboboxSelected>>', opt2_select)
 
 bycicle = PhotoImage(file='img/bycicle.png')
@@ -265,7 +264,6 @@ refresh = tk.Button(canvas,text="更新",bg='gray',fg='white',command=update)
 refresh.place(x=260,y=90,width=40,height=20)
 
 def map_clicked():
-    print(map_url)
     webbrowser.open(map_url)
 
 #查看地圖按鈕
