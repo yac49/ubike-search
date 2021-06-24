@@ -39,7 +39,9 @@
 4. 可點擊更新，更新數據
    
 右側腳踏車圖案將會依剩餘車數比例改變顏色，剩餘多為綠色，依數量減少為黃、紅色。
-
+![](img_readme/green.png)
+![](img_readme/yellow.png)
+![](img_readme/red.png)
 ### 應用技術
 * requests：下載網頁api資料
 * tkinter：設計GUI
