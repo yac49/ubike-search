@@ -17,7 +17,7 @@
 
 ## 專題介紹
 ### Requirement
-```python
+```py
 import random
 import tkinter
 from tkinter import *
