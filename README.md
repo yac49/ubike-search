@@ -50,10 +50,35 @@
 
 ```py
 import random
-
 import tkinter
 from tkinter import *
 import requests
 import webbrowser
+```
+#### 資料日期分隔
+```py
+def dateTrans(date):
+    return date[0:4] + '-' + date[4:6] + '-' + date[6:8] + ' ' + date[8:10] + ':' + date[10:12] + ':' + date[12:14]
+```
+#### 抓取資料並儲存於陣列
+```py
+def getTP2():
+    r = requests.get(url[1])
+    tp2_Data = r.json()
+    sna = []
+    for d in range (len(tp2_Data)):
+        sna.append(tp2_Data[d]['sna'])
+        temp=[]
+        temp.append(tp2_Data[d]['sno'])
+        temp.append(tp2_Data[d]['sna'])
+        temp.append(tp2_Data[d]['tot'])
+        temp.append(tp2_Data[d]['sbi'])
+        temp.append(tp2_Data[d]['sarea'])
+        temp.append(tp2_Data[d]['mday'])
+        temp.append(tp2_Data[d]['lat'])
+        temp.append(tp2_Data[d]['lng'])
+        temp.append(tp2_Data[d]['ar'])
+        data.append(temp)
+    opt2["values"] = sna
 ```
 
